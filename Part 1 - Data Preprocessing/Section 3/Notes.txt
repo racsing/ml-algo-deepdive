@@ -1,0 +1,49 @@
+
+=**=**= THE MACHINE LEARNING PROCESS =**=**=
+
+◉ DATA PRE-PROCESSING
+    - Import the data
+    - Clean the data
+    - Encode categorical variables
+    - Split into training & test sets
+    - Apply feature scaling (Normalization or Standardization)
+◉ MODELLING
+    - Build the model
+    - Train the model
+    - Tune hyperparameters (if needed)
+    - Make predictions
+◉ EVALUATION
+    - Calculate performance metrics
+    - Compare with baseline models
+    - Interpret results & make improvements
+-----------------------------------------
+
+🔶 INDEPENDENT VARIABLES VECTOR (FEATURES): X
+Definition: Features are the input variables used to predict the outcome Y.
+
+🔶 DEPENDENT VARIABLE VECTOR (TARGET): Y
+Definition: The dependent variable is the output or the value we are trying to predict.
+
+◈ Example: 
+ŷ = b0 + b1X1 + b2X2
+Dataset = Train set (80%) + Test set (20%)
+Output: Predicted values(ŷ) VS Actual value(y)
+
+🔶 FEATURE SCALING:
+* Always applied to columns
+* Out of multiple techniques of FS will focus on:
+    
+    -◈ NORMALIZATION: recommended for some specific scenarios
+        X' = (X - Xmin) / (Xmax - Xmin)
+        [0 ; 1]
+        
+    -◈ STANDARDIZATION: works all the time
+        X' = (X - Avg) / Standard Deviation
+        [-3 ; +3]
+------------------------------------------
+❓ Q: Feature Scaling: Before or After Splitting?
+✅ A: Feature Scaling should be applied AFTER splitting the dataset.
+
+Key Reasons:
+1️⃣ Prevent Data Leakage → If you scale before splitting, the test set gets influenced by the entire dataset’s statistics (mean, std), which makes the model indirectly learn from it.
+2️⃣ Real-World Simulation → In production, models encounter new, unseen data. The test set should only be scaled using parameters learned from the training set to mimic real-world scenarios.
